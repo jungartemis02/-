@@ -1,0 +1,88 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>3. 실현 가능성</title>
+    <style>
+        body { font-family: sans-serif; line-height: 1.6; padding: 20px; }
+        h2, h3 { color: #2c3e50; }
+        table { border-collapse: collapse; width: 100%; margin-bottom: 30px; }
+        th, td { border: 1px solid #999; padding: 8px 10px; text-align: left; }
+        th { background-color: #f2f2f2; }
+        ul { margin-left: 20px; }
+        img { margin: 15px 0; max-width: 100%; }
+    </style>
+</head>
+<body>
+    <h2>3. 실현 가능성</h2>
+
+    <h3>🧩 1. 시장 진입 전략</h3>
+    <p>
+        본 시스템은 <strong>군 내부망 환경에서의 AI 매뉴얼 시스템</strong>이라는 특수성과 <strong>HyDE 기반의 정밀 응답 기능</strong>을 바탕으로, 
+        기존 시스템 대비 높은 실효성을 보유합니다. 다음과 같은 <strong>단계별 전략</strong>을 통해 시장 진입 및 확장을 추진합니다.
+    </p>
+    <table>
+        <tr><th>단계</th><th>주요 목표</th><th>세부 실행 내용</th></tr>
+        <tr><td>1단계</td><td>군 시범사업 구축</td><td>공군 내부망(AFCNet)에 시범 적용, 장비 매뉴얼 수집 및 정제, 기초 LLM 학습</td></tr>
+        <tr><td>2단계</td><td>범군 확대</td><td>타군(육군, 해군 등) 및 전방 부대 확산, 사용자 피드백 기반 개선 및 HyDE 정밀화</td></tr>
+        <tr><td>3단계</td><td>공공기관 확장</td><td>경찰청, 소방청, 관세청 등 보안기관 확산, 도메인 특화 문서 매핑</td></tr>
+        <tr><td>4단계</td><td>민간 시장 확대</td><td>금융, 병원 등 폐쇄망 환경 고객 대상으로 SaaS 모델 제안</td></tr>
+    </table>
+
+    <h3>🗺️ 2. 사업화 로드맵 (1년 차 기준)</h3>
+    <pre>
+0~3개월   : 군 장비 매뉴얼 확보, 내재화 가능한 LLM 선택, 로컬 백엔드/프론트 구조 설계
+4~6개월   : 시범 부대 내 적용 → 사용성 테스트 및 사용자 피드백 수렴, KPI 정립
+7~9개월   : HyDE 방식 기반 정밀화, 사례 기반 자동 학습 모듈 시범 도입
+10~12개월 : 온프레미스 납품형 모델 정식 출시, 민간 대상 확장형 SaaS 제안서 작성
+    </pre>
+    <p>📷 이미지1: 제품 구상도(LLM + Vector DB 구성)</p>
+    <p>📷 이미지2: 사용자 질의응답 프로세스 화면 예시</p>
+    <p>📷 이미지3: 사업화 단계별 로드맵</p>
+
+    <h3>🧭 3. 유저 프로세스 변화 (As-Is → To-Be)</h3>
+    <table>
+        <tr><th>구분</th><th>기존(As-Is)</th><th>개선 후(To-Be)</th></tr>
+        <tr><td>정보 검색 방식</td><td>종이 매뉴얼 수동 탐색<br>장비 제조사 홈페이지 검색</td><td>자연어 질의 기반 AI 응답</td></tr>
+        <tr><td>정보 접근 시간</td><td>평균 5~10분 이상 소요</td><td>수초 이내 실시간 응답</td></tr>
+        <tr><td>고장 대응</td><td>경험자 위주 비정형 대응</td><td>AI 기반 절차 안내 및 유사 사례 검색</td></tr>
+        <tr><td>데이터 축적</td><td>불가능 또는 문서 파편화</td><td>경험 자동 저장 → 지속 학습 시스템</td></tr>
+    </table>
+
+    <h3>💰 4. 투자 및 자금 확보 전략</h3>
+    <h4>자금 구성</h4>
+    <ul>
+        <li><strong>초기 자금</strong>: 창업 지원금, 국방 SW 사업 지원, 기술 창업 R&D 과제</li>
+        <li><strong>중기 확보</strong>: Angel 투자, 국방산업 전문 VC, AI 특화 펀드 연계</li>
+        <li><strong>후속 투자</strong>: On-premise 판매 기반 수익 reinvest + 정부 혁신조달형 사업 연계</li>
+    </ul>
+
+    <h4>예산 예시 (1년차 기준)</h4>
+    <table style="width: 60%;">
+        <tr><th>항목</th><th>예산 규모(백만 원)</th><th>비고</th></tr>
+        <tr><td>인건비</td><td>80</td><td>AI 엔지니어, 백엔드/프론트</td></tr>
+        <tr><td>시스템 개발</td><td>100</td><td>LLM 튜닝, Vector DB 구축</td></tr>
+        <tr><td>장비/서버</td><td>60</td><td>폐쇄망 인프라 대응 장비</td></tr>
+        <tr><td>마케팅</td><td>30</td><td>군/공공기관 대상 제안</td></tr>
+        <tr><th>합계</th><th>270</th><th></th></tr>
+    </table>
+
+    <h3>📈 5. 수익 모델 및 KPI</h3>
+    <h4>수익 구조</h4>
+    <ul>
+        <li><strong>B2B On-Premise 구축형</strong>: 보안이 중요한 기관에 1회성 납품 + 연간 유지보수</li>
+        <li><strong>SaaS 구독형 모델</strong>: 도메인 특화 질의응답 시스템의 구독 기반 제공</li>
+        <li><strong>기능 추가 유료화</strong>: 오류 예측 모델, 사용 로그 분석 기능 모듈</li>
+    </ul>
+
+    <h4>KPI 지표 예시</h4>
+    <table style="width: 60%;">
+        <tr><th>항목</th><th>6개월 목표</th><th>1년 목표</th></tr>
+        <tr><td>시범부대 도입 수</td><td>2곳</td><td>5곳 이상</td></tr>
+        <tr><td>자연어 응답 정확도</td><td>80%</td><td>90% 이상</td></tr>
+        <tr><td>월간 질의 응답 수</td><td>5,000건</td><td>20,000건</td></tr>
+        <tr><td>피드백 기반 학습 반영율</td><td>30%</td><td>70%</td></tr>
+    </table>
+</body>
+</html>
