@@ -1,0 +1,162 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>내부망 AI 시스템 구성도</title>
+  <style>
+    body {
+      font-family: "Segoe UI", sans-serif;
+      margin: 2rem;
+      background-color: #f9f9f9;
+    }
+    h1, h2 {
+      color: #2c3e50;
+    }
+    .section {
+      margin-bottom: 3rem;
+    }
+    .flow {
+      white-space: pre;
+      font-family: "Courier New", monospace;
+      background: #fff;
+      border: 1px solid #ccc;
+      padding: 1rem;
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    th, td {
+      padding: 0.6rem;
+      border: 1px solid #ccc;
+      text-align: center;
+    }
+    th {
+      background-color: #34495e;
+      color: #fff;
+    }
+    td {
+      background-color: #ecf0f1;
+    }
+    .highlight-blue {
+      color: #2980b9;
+      font-weight: bold;
+    }
+    .highlight-red {
+      color: #c0392b;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>✅ 내부망 AI 시스템 구성도: 사용자 유형별 세분화</h1>
+
+  <div class="section">
+    <h2>1. 👤 일반 사용자 관점 (문서 검색, Q&A 목적)</h2>
+    <p><strong>주요 목적</strong>: 문서 질의응답, 자연어 검색, 개인화된 정보 탐색</p>
+    <div class="flow">
+[사용자 단말]
+     │
+     ▼
+[Web UI (React)]
+     │
+     ▼
+[Backend API (Flask)]
+     │
+     ├───────────────┐
+     ▼               ▼
+[로컬 LLM 엔진]     [Vector Database]
+(예: GPT4All)       (예: FAISS, Qdrant 등)
+     ▲                 ▲
+     │                 │
+     ▼                 │
+[Embedding Engine] ◀──┘
+     ▲
+     │
+     ▼
+[문서/매뉴얼 저장소]
+(PDF, Word 등)
+    </div>
+    <p>※ 일반 사용자는 <strong>Embedding Engine</strong>, <strong>Vector DB 수정 권한</strong>, <strong>LLM 설정</strong>에는 직접 접근하지 않음</p>
+  </div>
+
+  <div class="section">
+    <h2>2. 👨‍💼 관리자 관점 (데이터 관리, 모델 운영)</h2>
+    <p><strong>주요 목적</strong>: 문서 업로드 및 임베딩 갱신, LLM 운영, 성능 모니터링</p>
+    <div class="flow">
+[관리자 단말]
+     │
+     ▼
+[Admin UI or CLI 도구]
+     │
+     ▼
+[Backend API (Flask)]
+     │
+     ├─────────▶ [문서 저장소 업로드]
+     └─────────▶ [Embedding Engine]
+                          │
+                          ▼
+               [Vector DB 업데이트]
+    </div>
+  </div>
+
+  <div class="section">
+    <h2>🔒 권한 구분 요약</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>기능</th>
+          <th class="highlight-blue">일반 사용자</th>
+          <th class="highlight-red">관리자</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Web UI 통한 질문</td>
+          <td>✅</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>문서 업로드 및 관리</td>
+          <td>❌</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>Embedding 재계산</td>
+          <td>❌</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>Vector DB 수정</td>
+          <td>❌</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>LLM 설정 변경</td>
+          <td>❌</td>
+          <td>✅</td>
+        </tr>
+        <tr>
+          <td>시스템 로그 열람</td>
+          <td>❌</td>
+          <td>✅</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="section">
+    <h2>📘 선택 추가 기능 제안</h2>
+    <ul>
+      <li>사용자 질문 로그 조회 (관리자 전용)</li>
+      <li>문서 버전관리 (관리자 전용)</li>
+      <li>문서 접근제어 (향후 확장 가능)</li>
+    </ul>
+  </div>
+
+</body>
+</html>
